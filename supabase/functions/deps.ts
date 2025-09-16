@@ -21,6 +21,19 @@ export { Pool, PoolClient } from "https://deno.land/x/postgres@v0.19.3/mod.ts";
 // otel logs
 export { trace, context } from "npm:@opentelemetry/api";
 
+// Axios
+export {
+  default as Axios,
+  AxiosError,
+  AxiosHeaders,
+  isAxiosError,
+  type AxiosInstance,
+  type AxiosRequestConfig,
+  type AxiosResponse,
+} from "npm:axios@1.9.0";
+export { default as AxiosRetry } from "npm:axios-retry@4.5.0";
+export { authenticator, createSession } from "npm:@villedemontreal/auth-oidc-plugin-axios@1.1.2";
+
 // a composable JSON.stringify replacement
 export {
   stringify,

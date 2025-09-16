@@ -1,7 +1,7 @@
 {
   "name": "supabase-todos-demo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": ".",
   "scripts": {
     "start": "supabase functions serve --env-file ./supabase/.env",
     "start-otel-collector": "docker run --rm -p 4318:4318 -v $(pwd)/otel-config.yml:/etc/otelcol/config.yaml otel/opentelemetry-collector:latest",
@@ -12,5 +12,14 @@
   "description": "",
   "devDependencies": {
     "k6": "^0.0.0"
+  },
+  "lint-staged": {
+    "!(ci/**/*)*.{js, jsx,ts,tsx}": [
+      "eslint --fix",
+      "deno check supabase/functions --no-config"
+    ],
+    "*.{json,js,ts,jsx,tsx,html,md}": [
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
