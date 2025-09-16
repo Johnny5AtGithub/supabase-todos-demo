@@ -1,18 +1,28 @@
 // Exporting from kysely
 export {
   CompiledQuery,
+  QueryCreator,
+  InsertResult,
+  DeleteResult,
+  UpdateResult,
   Kysely,
   PostgresAdapter,
   PostgresIntrospector,
   PostgresQueryCompiler,
   sql,
+  Transaction,
 } from "npm:kysely@0.27.6";
 
+export { DateTime } from "npm:luxon@3.0.4";
+
 export type {
+  ColumnType,
   DatabaseConnection,
   Driver,
   QueryResult,
   TransactionSettings,
+  SelectQueryBuilder,
+  InsertQueryBuilder,
 } from "npm:kysely@0.27.6";
 
 // Exporting from deno-postgres-driver
